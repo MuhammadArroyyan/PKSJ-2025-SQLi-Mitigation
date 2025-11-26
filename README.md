@@ -6,6 +6,9 @@
 
 [cite_start]**Topik Proyek:** 5. Simulasi Serangan SQL Injection dan Implementasi Input Sanitization.
 
+## 👥 Dosen Pengampu
+Ferdi Chahyadi, S.Kom., M.Cs
+
 ## 👥 Anggota Kelompok
 | Nama | NIM | Peran |
 |------|-----|-------|
