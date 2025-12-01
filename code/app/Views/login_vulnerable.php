@@ -21,15 +21,20 @@
             padding: 20px;
             box-shadow: 0 0 10px #00ff41;
             position: relative;
+            text-align: center;
         }
         /* Efek Glitch Sederhana */
         h1 {
             text-transform: uppercase;
             text-shadow: 2px 0 red, -2px 0 blue;
             animation: glitch 1s infinite alternate;
+            margin-bottom: 5px;
         }
+        p { margin-top: 0; margin-bottom: 20px; font-size: 0.8rem; }
+        
         input {
-            width: 90%;
+            width: 100%;
+            box-sizing: border-box;
             background: #000;
             border: 1px solid #333;
             border-bottom: 2px solid #00ff41;
@@ -37,9 +42,12 @@
             padding: 10px;
             margin-bottom: 15px;
             font-family: inherit;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
         input:focus { outline: none; background: #111; }
+        
+        label { display: block; text-align: left; font-weight: bold; margin-bottom: 5px; }
+
         button {
             width: 100%;
             padding: 10px;
@@ -49,16 +57,36 @@
             border: none;
             cursor: pointer;
             font-size: 1.2rem;
+            text-transform: uppercase;
         }
         button:hover { background: #fff; }
+        
         .alert {
             background: #ff0000;
             color: #000;
             padding: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: bold;
             text-align: center;
+            border: 1px solid #ff0000;
         }
+
+        /* --- TOMBOL SWITCH --- */
+        .mode-switch {
+            display: block;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #333;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+        .mode-switch:hover {
+            color: #0041ff; /* Berubah jadi Biru saat dihover */
+            text-shadow: 0 0 5px #0041ff;
+        }
+
         @keyframes glitch {
             0% { transform: skew(0deg); }
             20% { transform: skew(-2deg); }
@@ -71,7 +99,7 @@
 
     <div class="container">
         <h1>/// SYSTEM_LOGIN</h1>
-        <p>ENTER CREDENTIALS TO ACCESS DATABASE</p>
+        <p style="color: #ff0041;">[ VULNERABLE_MODE_ACTIVE ]</p>
         
         <?php if(session()->getFlashdata('msg')):?>
             <div class="alert"><?= session()->getFlashdata('msg') ?></div>
@@ -86,6 +114,10 @@
             
             <button type="submit">EXECUTE_LOGIN</button>
         </form>
+
+        <a href="<?= site_url('secure-login') ?>" class="mode-switch">
+            >>> SWITCH TO SECURE MODE (FORTRESS)
+        </a>
     </div>
 
 </body>
