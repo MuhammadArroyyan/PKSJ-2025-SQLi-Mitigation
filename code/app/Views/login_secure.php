@@ -70,7 +70,7 @@
             <div class="alert"><?= session()->getFlashdata('msg') ?></div>
         <?php endif;?>
 
-        <form action="/secure-login/auth" method="post">
+        <form action="<?= site_url('secure-login/auth') ?>" method="post">
             <label>USER_ID:</label>
             <input type="text" name="username" autocomplete="off" autofocus>
             
