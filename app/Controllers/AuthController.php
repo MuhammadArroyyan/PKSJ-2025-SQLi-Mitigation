@@ -68,7 +68,7 @@ class AuthController extends BaseController
         $user  = $query->getRowArray();
 
         if ($user) {
-            $session->setFlashdata('success', '⚠️ LOGIN BYPASS BERHASIL VIA SQL INJECTION!');
+            $session->setFlashdata('success', '⚠️ LOGIN BERHASIL!');
             
             $this->setUserSession($user);
             return redirect()->to($this->getDashboardByRole($user['role']));
